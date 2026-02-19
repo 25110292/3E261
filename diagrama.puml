@@ -1,0 +1,56 @@
+class molde
+class redondo 
+class cuadrado
+class corazon
+class pastel 
+class vainilla
+class fresa
+class decoracion 
+class chispas
+class colores
+class chocolate 
+class cobertura 
+class rojo
+class verde
+class rosa
+class cafe
+class relleno 
+class crema 
+class mermelada
+class cerezas 
+class utencilios 
+class espatula
+class horno 
+class transportadora
+class caja 
+class personaje 
+class pedido
+
+redondo-->molde
+redondo-->molde
+cuadrado -->molde 
+corazon --> molde 
+vainilla-->pastel
+chocolate-->pastel
+fresa-->pastel
+chispas-->decoracion 
+chocolate-->chispas
+colores-->chispas
+rojo-->cobertura
+verde-->cobertura
+rosa-->cobertura
+cafe->cobertura 
+crema-->relleno 
+mermelada -->relleno
+cerezas-->decoracion
+espatula-->utencilios
+horno-->utencilios
+transportadora-->utencilios
+caja-->utencilios
+pastel 0-- molde
+pastel 0-- decoracion
+pastel 0-- cobertura
+pastel 0-- relleno 
+pastel *-- utencilios 
+personaje *-- pedido
+pedido *--pastel 
