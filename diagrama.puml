@@ -3,15 +3,19 @@ class molde
 class redondo 
 class cuadrado
 class corazon
-class pastel 
-class vainilla
+class pastel {
+    -Capa capa []
+}
+class Vainilla
 class fresa
 class decoracion 
 class chispa
 class color
 class chocolate 
-class cobertura 
-class rojo
+class cobertura {
+    +Pastel : Decorar(color)
+}
+class Rojo
 class verde
 class rosa
 class cafe
@@ -21,33 +25,33 @@ class mermelada
 class cereza
 class utencilio 
 class espatula
-class horno 
+class horno
 class transportadora
 class caja 
 class personaje 
 class pedido
 class capa 
 
-redondo-->molde
-redondo-->molde
-cuadrado -->molde 
-corazon --> molde 
-vainilla-->pastel
-chocolate-->pastel
-fresa-->pastel
-chispa-->decoracion 
-chocolate-->chispa
-color-->chispa
-rojo-->cobertura
-verde-->cobertura
-rosa-->cobertura
-cafe->cobertura 
-crema-->relleno 
-mermelada -->relleno
-cereza-->decoracion
-espatula-->utencilio
-horno-->utencilio
-transportadora-->utencilio
+redondo--|>molde
+redondo--|>molde
+cuadrado --|>molde 
+corazon --|> molde 
+vainilla--|>pastel
+chocolate--|>pastel
+fresa--|>pastel
+chispa--|>decoracion 
+chocolate--|>chispa
+color--|>chispa
+rojo--|>cobertura
+verde--|>cobertura
+rosa--|>cobertura
+cafe--|>cobertura 
+crema--|>relleno 
+mermelada --|>relleno
+cereza--|>decoracion
+espatula--|>utencilio
+horno--|>utencilio
+transportadora--|>utencilio
 caja-->utencilio
 pastel o--"1,3" molde
 pastel o-- decoracion
