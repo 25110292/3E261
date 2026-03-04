@@ -1,3 +1,4 @@
+@startuml
 class molde
 class redondo 
 class cuadrado
@@ -6,8 +7,8 @@ class pastel
 class vainilla
 class fresa
 class decoracion 
-class chispas
-class colores
+class chispa
+class color
 class chocolate 
 class cobertura 
 class rojo
@@ -17,14 +18,15 @@ class cafe
 class relleno 
 class crema 
 class mermelada
-class cerezas 
-class utencilios 
+class cereza
+class utencilio 
 class espatula
 class horno 
 class transportadora
 class caja 
 class personaje 
 class pedido
+class capa 
 
 redondo-->molde
 redondo-->molde
@@ -33,24 +35,27 @@ corazon --> molde
 vainilla-->pastel
 chocolate-->pastel
 fresa-->pastel
-chispas-->decoracion 
-chocolate-->chispas
-colores-->chispas
+chispa-->decoracion 
+chocolate-->chispa
+color-->chispa
 rojo-->cobertura
 verde-->cobertura
 rosa-->cobertura
 cafe->cobertura 
 crema-->relleno 
 mermelada -->relleno
-cerezas-->decoracion
-espatula-->utencilios
-horno-->utencilios
-transportadora-->utencilios
-caja-->utencilios
-pastel 0-- molde
-pastel 0-- decoracion
-pastel 0-- cobertura
-pastel 0-- relleno 
-pastel *-- utencilios 
-personaje *-- pedido
-pedido *--pastel 
+cereza-->decoracion
+espatula-->utencilio
+horno-->utencilio
+transportadora-->utencilio
+caja-->utencilio
+pastel o--"1,3" molde
+pastel o-- decoracion
+pastel o-- cobertura
+pastel o-- relleno 
+personaje *-- "1,4"pedido
+pedido *-- pastel 
+pastel *--"1,3" capa 
+pastel o--"1,5"utencilio 
+
+@enduml
