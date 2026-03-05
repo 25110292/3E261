@@ -1,65 +1,75 @@
 @startuml
-class molde
-class redondo 
-class cuadrado
-class corazon
-class pastel {
+class Molde
+class Redondo 
+class Cuadrado
+class Corazon
+class Pastel {
     -Capa capa []
 }
 class Vainilla
-class fresa
-class decoracion 
-class chispa
-class color
-class chocolate 
-class cobertura {
+class Fresa
+class Decoracion{
+    +Pastel : Decorar(color)
+} 
+class Chispa
+class Color
+class Chocolate 
+class Cobertura {
     +Pastel : Decorar(color)
 }
 class Rojo
-class verde
-class rosa
-class cafe
-class relleno 
-class crema 
-class mermelada
-class cereza
-class utencilio 
-class espatula
-class horno
-class transportadora
-class caja 
-class personaje 
-class pedido
-class capa 
+class Verde
+class Rosa
+class Cafe
+class Relleno{
+    +Pastel : Decorar(sabor)
+}
+class Crema 
+class Mermelada
+class Cereza
+class Utencilio{
+    +Pastel : Ayudar(forma)
+}
+class Espatula
+class Horno
+class Transportadora
+class Caja 
+class Personaje {
+    -Pedido pedido
+}
+class Pedido{
+    -Pastel pastel 
+    }
+class Capa 
 
-redondo--|>molde
-redondo--|>molde
-cuadrado --|>molde 
-corazon --|> molde 
+Redondo--|>Molde
+Redondo--|>Molde
+Cuadrado --|>Molde 
+Corazon --|> Molde 
 vainilla--|>pastel
-chocolate--|>pastel
-fresa--|>pastel
-chispa--|>decoracion 
-chocolate--|>chispa
-color--|>chispa
-rojo--|>cobertura
-verde--|>cobertura
-rosa--|>cobertura
-cafe--|>cobertura 
-crema--|>relleno 
-mermelada --|>relleno
-cereza--|>decoracion
-espatula--|>utencilio
-horno--|>utencilio
-transportadora--|>utencilio
-caja-->utencilio
-pastel o--"1,3" molde
-pastel o-- decoracion
-pastel o-- cobertura
-pastel o-- relleno 
-personaje *-- "1,4"pedido
-pedido *-- pastel 
-pastel *--"1,3" capa 
-pastel o--"1,5"utencilio 
+Chocolate--|>pastel
+Fresa--|>Pastel
+Chispa--|>Decoracion 
+Chocolate--|>Chispa
+Color--|>Chispa
+Rojo--|>Cobertura
+Verde--|>Cobertura
+Rosa--|>Cobertura
+Cafe--|>Cobertura 
+Crema--|>Relleno 
+Mermelada --|>Relleno 
+Cereza--|>Decoracion
+Espatula--|>Utencilio
+Horno--|>Utencilio
+Transportadora--|>Utencilio
+Caja-->Utencilio
+Pastel "1" o--"1,3" Molde
+Pastel o-- Decoracion
+Pastel o-- Cobertura
+Pastel o-- Relleno 
+personaje "1"*-- "1,4"Pedido
+Pedido *-- Pastel 
+Pastel "1"*--"1,3" Capa 
+Pastel "1" o--"1,5"Utencilio 
 
 @enduml
